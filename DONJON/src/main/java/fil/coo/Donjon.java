@@ -4,7 +4,7 @@ package fil.coo;
  * Hello world!
  *
  */
-public class App 
+public class Donjon
 {
     public static void main( String[] args )
     {
