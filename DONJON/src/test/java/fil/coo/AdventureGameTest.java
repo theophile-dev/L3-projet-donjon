@@ -6,9 +6,5 @@ import org.junit.Test;
 
 public class AdventureGameTest {
 
-	@Test
-	public void test() {
-		//TODO
-	}
 
 }
