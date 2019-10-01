@@ -28,15 +28,12 @@ public abstract class Character {
 	public void attack(Character cible) {
 		int pv_cible = cible.getPv();
 		int force_attack = this.getForce();
-		
 		cible.setPv(pv_cible - force_attack);
 	}
-	
-	/*
-	public abstract void die() {
-		
-	}
-	*/
+	/**
+	 * Function called when the character is dead
+	 */
+	public abstract void die();
 	
 	
 	
