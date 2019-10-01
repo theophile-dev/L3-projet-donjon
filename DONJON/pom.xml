@@ -54,7 +54,7 @@
 	  <configuration>
 	    <archive>
 	      <manifest>
-		<mainClass>fil.coo.Donjon</mainClass>
+		<mainClass>fil.coo.AdventureGame</mainClass>
 	      </manifest>
 	    </archive>
 	  </configuration>
