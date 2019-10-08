@@ -30,11 +30,6 @@ public abstract class Character {
 		int force_attack = this.getForce();
 		cible.setPv(pv_cible - force_attack);
 	}
-	/**
-	 * Function called when the character is dead
-	 */
-	public abstract void die();
-	
 	
 	
 	/**
@@ -71,6 +66,14 @@ public abstract class Character {
 	public void setForce(int force) {
 		this.force = force;
 	}
+	
+	/**
+	 * Check if the character is dead
+	 */
+	public boolean isDead() {
+		return this.getPv() <= 0;
+	}
+	
 	
 	/**
 	 * Donne la valeur de force du personnage
