@@ -20,9 +20,10 @@ public class DonjonBuilder {
 		room2.setNeighbor(Direction.DOWN, room3);
 		room3.setNeighbor(Direction.UP, room3);
 		room3.setNeighbor(Direction.RIGHT, donjonExit);
-		
-
-		
+		Monster monster1 = new Monster("Ugly Monster", 2, 1, 2);
+		Monster monster2 = new Monster("Ugly Monster2", 2, 1, 2);
+		room3.addMonster(monster1);
+		room2.addMonster(monster2);
 	}
 	
 	public Room getDonjonEntrance(){

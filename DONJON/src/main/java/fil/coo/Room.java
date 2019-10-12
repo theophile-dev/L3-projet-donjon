@@ -28,8 +28,11 @@ public class Room implements Displayable{
 	}
 
 	public void describeSurrounding() {
+		this.display.simpleMessage("Monster List :");
 		this.display.displayList(monsters);
+		this.display.simpleMessage("Item List :");
 		this.display.displayList(items);
+		this.display.simpleMessage("Direction List :");
 		this.display.displayHashMap(neighbors);
 	}
 	

@@ -1,20 +1,18 @@
 package fil.coo.items;
 
-public class Heal extends Item {
-	private int pv;
-	
-	
+public class StrengthPotion extends Item {
+	private int forceGiven;
+		
 	@Override
 	public void use() {
 		// TODO Auto-generated method stub
 
 	}
 
-
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return "Healing Potion";
+		return "Strength potion";
 	}
 
 }
