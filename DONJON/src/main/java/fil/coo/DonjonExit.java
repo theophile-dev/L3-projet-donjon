@@ -8,6 +8,11 @@ public class DonjonExit extends Room {
 	}
 
 	@Override
+	public void onEnter() {
+		this.display.simpleMessage("You Won !");
+	}
+
+	@Override
 	public String getDescription() {
 		return "Exit";
 	}

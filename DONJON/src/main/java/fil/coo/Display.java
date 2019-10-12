@@ -26,6 +26,10 @@ public class Display {
     }
 
 
+    public void simpleMessage(String msg) {
+    	System.out.println(msg);
+    }
+    
     /**
      * Display a the key-value pairs of a Hashmap of Displayable object
      * @param <T>
@@ -64,16 +68,17 @@ public class Display {
     	
     	int choiceIndex = -1;
     	do {
-	    	System.out.println("Choose one of the options below, enter a number between 1 and" + choice.size());
+	    	System.out.println("Choose one of the options below, enter a number between 1 and " + choice.size());
 	    	this.displayList(choice);
 	    	try {
-	    	choiceIndex = scanner.nextInt();
+	    		choiceIndex = scanner.nextInt();
 	    	} catch(InputMismatchException e) {
 	    		System.out.println("Input invalid");
+	    		scanner.nextLine();
 	    	}
-    	} while(choiceIndex > 0 && choiceIndex <= choice.size());
+    	} while((choiceIndex < 0) || (choiceIndex > choice.size()));
     	
-    	return choice.get(choiceIndex + 1);
+    	return choice.get(choiceIndex - 1);
     }
     
     

@@ -1,11 +1,11 @@
 package fil.coo.actions;
 
+import fil.coo.Direction;
 import fil.coo.Display;
 import fil.coo.EmptyListException;
 import fil.coo.ForbiddenDirectionException;
 import fil.coo.Player;
 import fil.coo.Room;
-import fil.coo.directions.Direction;
 
 public class Move extends Action {
 	
@@ -13,6 +13,7 @@ public class Move extends Action {
 
 	public Move(Player player) {
 		super(player);
+		this.display = Display.getInstance();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -26,9 +27,11 @@ public class Move extends Action {
 	public void act() {
 		Player player = this.getPlayer();
 		Room currentRoom = player.getCurrentRoom();
+		this.display.simpleMessage("Choose a direction :");
 		try {
 			Direction chosenDirection = this.display.listChoose(currentRoom.getAvailableDirection());
 			player.setCurrentRoom(currentRoom.getNextRoom(chosenDirection));
+			player.getCurrentRoom().onEnter();
 		} catch (EmptyListException e) {
 			System.out.println("No direction available");
 			e.printStackTrace();
@@ -37,6 +40,14 @@ public class Move extends Action {
 			System.out.println("The chosen direction point toward a non-existing room");
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public boolean canBePerform() {
+		Room currentRoom = this.getPlayer().getCurrentRoom();
+		boolean hasAtLeastOneExit = currentRoom.getNeighbors().size() != 0;
+		boolean noMonsterAlive = currentRoom.getMonsters().size() == 0;
+		return hasAtLeastOneExit && noMonsterAlive;
 	}
 
 }

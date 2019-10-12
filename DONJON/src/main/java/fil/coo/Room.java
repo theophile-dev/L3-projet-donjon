@@ -3,20 +3,23 @@ package fil.coo;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import fil.coo.directions.Direction;
 import fil.coo.items.Item;
 
 public class Room implements Displayable{
 	private ArrayList<Monster> monsters;
 	private ArrayList<Item> items;
 	private HashMap<Direction, Room> neighbors;
-	private Display display;
+	protected Display display;
+	private static int numberOfRooms = 0;
+	private int roomNumber;
 		
 	public Room() {
 		this.display = Display.getInstance();
 		this.neighbors = new HashMap<Direction, Room>();
 		this.monsters = new ArrayList<Monster>();
 		this.items = new ArrayList<Item>();
+		Room.numberOfRooms++;
+		this.roomNumber = Room.numberOfRooms;
 	}
 
 
@@ -28,6 +31,10 @@ public class Room implements Displayable{
 		this.display.displayList(monsters);
 		this.display.displayList(items);
 		this.display.displayHashMap(neighbors);
+	}
+	
+	public void onEnter() {
+		this.display.simpleMessage("Welcome to room number " + this.roomNumber);
 	}
 	
 	public void addMonster(Monster monster) {
@@ -61,6 +68,10 @@ public class Room implements Displayable{
 	
 	public void setNeighbor(Direction direction, Room neighbor) {
 		this.neighbors.put(direction, neighbor);
+	}
+	
+	public ArrayList<Monster> getMonsters(){
+		return this.monsters;
 	}
 
 	@Override

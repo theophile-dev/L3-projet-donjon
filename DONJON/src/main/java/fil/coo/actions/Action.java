@@ -17,6 +17,8 @@ public abstract class Action implements Displayable {
 		this.player = player;
 	}
 	
+	public abstract boolean canBePerform();
+	
 	public abstract void act();
 	
 	
