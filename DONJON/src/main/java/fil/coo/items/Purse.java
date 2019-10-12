@@ -1,4 +1,4 @@
-package fil.coo;
+package fil.coo.items;
 
 public class Purse extends Item {
 	private int po;
@@ -7,6 +7,12 @@ public class Purse extends Item {
 	public void use() {
 	// Player.setPo(Player.getPo + po;	
 
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return "Purse";
 	}
 
 }

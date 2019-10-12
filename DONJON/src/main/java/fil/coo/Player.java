@@ -16,7 +16,7 @@ public class Player extends Character {
 	public void setCurrentRoom(Room currentRoom) {
 		this.currentRoom = currentRoom;
 	}
-
+	
 
 
 }
