@@ -14,11 +14,17 @@ public class LookAround extends Action {
 	}
 
 	@Override
+	/**
+	 * Player get information about the Room
+	 */
 	public void act() {
 		this.getPlayer().getCurrentRoom().describeSurrounding();
 	}
 
 	@Override
+	/**
+	 * LookAround can always be perform
+	 */
 	public boolean canBePerform() {
 		// TODO Auto-generated method stub
 		return true;

@@ -24,6 +24,9 @@ public class Move extends Action {
 	}
 
 	@Override
+	/**
+	 * Move the Player in the neighbor Room at the choose Direction
+	 */
 	public void act() {
 		Player player = this.getPlayer();
 		Room currentRoom = player.getCurrentRoom();
@@ -43,6 +46,9 @@ public class Move extends Action {
 	}
 
 	@Override
+	/**
+	 * Move can only be perform only if there is no monster and there is at least one neighbor Room
+	 */
 	public boolean canBePerform() {
 		Room currentRoom = this.getPlayer().getCurrentRoom();
 		boolean hasAtLeastOneExit = currentRoom.getNeighbors().size() != 0;

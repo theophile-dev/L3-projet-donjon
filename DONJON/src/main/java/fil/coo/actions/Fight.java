@@ -10,6 +10,7 @@ public class Fight extends Action {
 
 	private Display display;
 	
+	
 	public Fight(Player player) {
 		super(player);
 		this.display = Display.getInstance();
@@ -21,11 +22,17 @@ public class Fight extends Action {
 	}
 
 	@Override
+	/**
+	 * Fight can only be perform if there is at least on Monster in the Room
+	 */
 	public boolean canBePerform() {
 		return this.getPlayer().getCurrentRoom().getMonsters().size() > 0;
 	}
 
 	@Override
+	/**
+	 * Make a fight with the player and a monster choose from a list
+	 */
 	public void act() {
 		Player player = this.getPlayer();
 		Room currentRoom = player.getCurrentRoom();
