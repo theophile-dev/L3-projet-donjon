@@ -1,4 +1,4 @@
-# H1 Project Dungeon
+# Project Dungeon
 
 Authors : Théophile COSSE and Florian COVEY
 
