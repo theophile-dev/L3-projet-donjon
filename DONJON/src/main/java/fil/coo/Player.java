@@ -29,27 +29,49 @@ public class Player extends Character {
 		
 	}
 	
+	/**
+	 * Return the player's death origin
+	 * @return this.deathOrigin, the death origin
+	 */
 	public String getDeathOrigin() {
 		return deathOrigin;
 	}
-
+	
+	/**
+	 * Set the player's death origin
+	 * @param deathOrigin, the death origin
+	 */
 	public void setDeathOrigin(String deathOrigin) {
 		this.deathOrigin = deathOrigin;
 	}
 
+	/**
+	 * Check if the player has won the game
+	 * @return 
+	 */
 	public boolean hasPlayerWon() {
 		return this.currentRoom instanceof DonjonExit;
 	}
 	
+	/**
+	 * Give the player's current room
+	 * @return this.current
+	 */
 	public Room getCurrentRoom() {
 		return currentRoom;
 	}
 	
-
+	/**
+	 * Set the player's current room
+	 * @param currentRoom
+	 */
 	public void setCurrentRoom(Room currentRoom) {
 		this.currentRoom = currentRoom;
 	}
 	
+	/**
+	 * Display player's available actions
+	 */
 	public void act() {
 		try {
 			display.listChoose(availableActions).act();
@@ -59,10 +81,17 @@ public class Player extends Character {
 		}
 	}
 	
+	/** 
+	 * Return player's available actions
+	 * @return this.availableActions
+	 */
 	public ArrayList<Action> getAvailableActions(){
 		return this.availableActions;
 	}
 	
+	/**
+	 * Update player's available actions
+	 */
 	public void updateAvailableAction() {
 		this.availableActions = new ArrayList<Action>();
 		for(Action action: this.actionList) {
