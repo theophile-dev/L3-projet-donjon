@@ -2,9 +2,10 @@ package fil.coo;
 
 public abstract class Character {
 	private String name;	// nom du personnage
-	private int pv;			// points de vie
-	private int force;		// force
-	private int po;			// pièces d'or
+	private int hp;			// points de vie
+	private int strength;		// force
+	private int gold;			// pièces d'or
+	protected Display display;
 	
 	/**
 	 * Crée un personnage à partir de son nom, du nombre de ses points de vie, de sa force et du nombre de ses pièces d'or.
@@ -13,11 +14,12 @@ public abstract class Character {
 	 * @param force la force du personnage
 	 * @param po le nombre de pièces d'or du personnage
 	 */
-	public Character(String name, int pv, int force, int po){
+	public Character(String name, int hp, int strength, int gold){
 		this.name = name;
-		this.pv = pv;
-		this.force = force;
-		this.po = po;
+		this.hp = hp;
+		this.strength = strength;
+		this.gold = gold;
+		this.display = Display.getInstance();
 	}
 	
 	/**
@@ -25,10 +27,10 @@ public abstract class Character {
 	 * La valeur de force de l'attaquant est déduit du totale de points de vie la cible.
 	 * @param cible la cible de l'attaque
 	 */
-	public void attack(Character cible) {
-		int pv_cible = cible.getPv();
-		int force_attack = this.getForce();
-		cible.setPv(pv_cible - force_attack);
+	public void attack(Character target) {
+
+		this.display.simpleMessage(this.getName() + " attack and deal " + this.getStrength());
+		target.setHp(target.getHp() - this.getStrength());
 	}
 	
 	
@@ -46,16 +48,16 @@ public abstract class Character {
 	 * Fixe pv comme nouvelle valeur des points de vie du personnage.
 	 * @param pv la nouvelle valeur de points de vie du personnage
 	 */
-	public void setPv(int pv) {
-		this.pv = pv;
+	public void setHp(int hp) {
+		this.hp = hp;
 	}
 	
 	/**
 	 * Donne le nombre de point de vie du personnage
 	 * @return this.pv les points de vie actuels du personnage
 	 */
-	public int getPv() {
-		return this.pv;
+	public int getHp() {
+		return this.hp;
 	}
 	
 	
@@ -63,15 +65,15 @@ public abstract class Character {
 	 * Fixe force comme la nouvelle valeur de force du personnage
 	 * @param force la nouvelle valeur de force du personnage
 	 */
-	public void setForce(int force) {
-		this.force = force;
+	public void setStrength(int strength) {
+		this.strength = strength;
 	}
 	
 	/**
 	 * Check if the character is dead
 	 */
 	public boolean isDead() {
-		return this.getPv() <= 0;
+		return this.getHp() <= 0;
 	}
 	
 	
@@ -79,8 +81,8 @@ public abstract class Character {
 	 * Donne la valeur de force du personnage
 	 * @return this.force la force du personnage
 	 */
-	public int getForce() {
-		return this.force;
+	public int getStrength() {
+		return this.strength;
 	}
 	
 	
@@ -88,15 +90,15 @@ public abstract class Character {
 	 * Fixe po comme nouveau nombres de pièces d'or que possède ke personnage
 	 * @param po le nouveau nombre de pièces d'or
 	 */
-	public void setPo(int po) {
-		this.pv = po;
+	public void setGold(int gold) {
+		this.gold = gold;
 	}
 	
 	/**
 	 * Donne le nombre de pièces d'or que possède le personnage
 	 * @return this.po le nombre de pièces d'or du personnage 
 	 */
-	public int getPo() {
-		return this.po;
+	public int getGold() {
+		return this.gold;
 	}
 }

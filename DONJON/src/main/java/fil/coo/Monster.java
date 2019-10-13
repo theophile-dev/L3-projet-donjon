@@ -2,8 +2,8 @@ package fil.coo;
 
 public class Monster extends Character implements Displayable{
 
-	public Monster(String name, int pv, int force, int po) {
-		super(name, pv, force, po);
+	public Monster(String name, int hp, int strength, int gold) {
+		super(name, hp, strength, gold);
 		
 	}
 

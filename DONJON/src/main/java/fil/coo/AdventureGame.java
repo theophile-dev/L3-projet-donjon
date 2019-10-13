@@ -9,13 +9,13 @@ public class AdventureGame {
 	
     public static void main( String[] args ) {
         DonjonBuilder donjonBuilder = new DonjonBuilder(4);
-        Player player = new Player("didier", 10, 10, 10, donjonBuilder.getDonjonEntrance());
+        Player player = new Player("didier", 10, 1, 10, donjonBuilder.getDonjonEntrance());
         while (!(player.hasPlayerWon() || player.isDead())) {
         	player.act();
         	player.updateAvailableAction();
         }
         if (player.isDead()) {
-        	System.out.println("You died");
+        	System.out.println("You died : " + player.getDeathOrigin());
         }
        
     }

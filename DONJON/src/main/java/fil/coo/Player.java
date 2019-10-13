@@ -3,6 +3,7 @@ package fil.coo;
 import java.util.ArrayList;
 
 import fil.coo.actions.Action;
+import fil.coo.actions.Fight;
 import fil.coo.actions.LookAround;
 import fil.coo.actions.Move;
 
@@ -11,7 +12,7 @@ public class Player extends Character {
 	private Room currentRoom;
 	private ArrayList<Action> actionList;
 	private ArrayList<Action> availableActions;
-	private Display display;
+	private String deathOrigin;
 	private boolean hasWon;
 
 	public Player(String name, int pv, int force, int po,Room currentRoom) {
@@ -22,10 +23,20 @@ public class Player extends Character {
 		this.actionList = new ArrayList<Action>();
 		this.actionList.add(new LookAround(this));
 		this.actionList.add(new Move(this));
+		this.actionList.add(new Fight(this));
+		this.deathOrigin = "Unknown";
 		this.updateAvailableAction();
 		
 	}
 	
+	public String getDeathOrigin() {
+		return deathOrigin;
+	}
+
+	public void setDeathOrigin(String deathOrigin) {
+		this.deathOrigin = deathOrigin;
+	}
+
 	public boolean hasPlayerWon() {
 		return this.currentRoom instanceof DonjonExit;
 	}
@@ -33,6 +44,7 @@ public class Player extends Character {
 	public Room getCurrentRoom() {
 		return currentRoom;
 	}
+	
 
 	public void setCurrentRoom(Room currentRoom) {
 		this.currentRoom = currentRoom;
@@ -60,9 +72,4 @@ public class Player extends Character {
 			
 		}
 	}
-	
-	
-	
-
-
 }

@@ -18,9 +18,9 @@ public abstract class CharacterTest {
 	 */
 	@Test
 	public void attackDealDamageTest() {
-		int character2PvBeforeAttack = character2.getPv();
+		int character2PvBeforeAttack = character2.getHp();
 		character1.attack(character2);
-		assertEquals(character2PvBeforeAttack - character1.getForce(), character2.getPv());
+		assertEquals(character2PvBeforeAttack - character1.getStrength(), character2.getHp());
 	}
 
 }
