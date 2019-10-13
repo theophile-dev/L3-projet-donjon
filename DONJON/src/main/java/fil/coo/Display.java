@@ -52,6 +52,13 @@ public class Display {
 			System.out.println((i+1)+ " :" + list.get(i).getDescription());
 		}
     }
+    /**
+     * Ask the user a string, the string can be empty
+     * @return the string entered by the user
+     */
+    public String askString() {
+    	return this.scanner.nextLine();
+    }
   
     /**
      * listChoose display use and Object list and allow the user to chose one by typing the index of the object in the list

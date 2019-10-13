@@ -123,6 +123,10 @@ public class Room implements Displayable{
 	public ArrayList<Monster> getMonsters(){
 		return this.monsters;
 	}
+	
+	public ArrayList<Item> getItems(){
+		return this.items;
+	}
 
 	@Override
 	/**

@@ -6,6 +6,7 @@ import fil.coo.actions.Action;
 import fil.coo.actions.Fight;
 import fil.coo.actions.LookAround;
 import fil.coo.actions.Move;
+import fil.coo.actions.Use;
 
 public class Player extends Character {
 
@@ -32,6 +33,7 @@ public class Player extends Character {
 		this.actionList.add(new LookAround(this));
 		this.actionList.add(new Move(this));
 		this.actionList.add(new Fight(this));
+		this.actionList.add(new Use(this));
 		this.deathOrigin = "Unknown";
 		this.updateAvailableAction();
 		

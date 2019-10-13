@@ -25,7 +25,7 @@ public abstract class Character {
 	/**
 	 * Le personnage attaque sa cible, un autre personnage.
 	 * La valeur de force de l'attaquant est déduit du totale de points de vie la cible.
-	 * @param cible la cible de l'attaque
+	 * @param target la cible de l'attaque
 	 */
 	public void attack(Character target) {
 
@@ -33,6 +33,16 @@ public abstract class Character {
 		target.setHp(target.getHp() - this.getStrength());
 	}
 	
+	public void displayStats() {
+		this.display.simpleMessage(" --- ");
+		this.display.simpleMessage(this.getName() + " stats :");
+		this.display.simpleMessage("Strength : " + this.getStrength());
+		this.display.simpleMessage("Hp : " + this.getHp());
+		this.display.simpleMessage("Gold : " + this.getGold());
+		this.display.simpleMessage(" --- ");
+		
+		
+	}
 	
 	/**
 	 * Donne le nom du personnage
