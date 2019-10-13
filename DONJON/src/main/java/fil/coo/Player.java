@@ -15,6 +15,14 @@ public class Player extends Character {
 	private String deathOrigin;
 	private boolean hasWon;
 
+	/**
+	 * Create a player
+	 * @param name, his name
+	 * @param pv, his life points
+	 * @param force, his strength
+	 * @param po, his gold
+	 * @param currentRoom, his starting room
+	 */
 	public Player(String name, int pv, int force, int po,Room currentRoom) {
 		super(name, pv, force, po);
 		this.display = Display.getInstance();
