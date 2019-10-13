@@ -38,6 +38,7 @@ public class DonjonBuilder {
 		room2.addMonster(monster2);
 		donjonEntrance.addItem(itemGenerator.getRandomItem());
 		donjonEntrance.addItem(itemGenerator.getRandomItem());
+		room2.addItem(new OneArmedBandit(4));
 		room3.addItem(itemGenerator.getRandomItem());
 		room3.addItem(itemGenerator.getRandomItem());
 		room3.addItem(itemGenerator.getRandomItem());

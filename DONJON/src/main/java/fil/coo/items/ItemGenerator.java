@@ -24,7 +24,7 @@ public class ItemGenerator {
 
 	
 	private ItemGenerator() {
-		this.availableItems = new Item[]{new Purse(5), new HealingPotion(3), new OneArmedBandit(2), new StrengthPotion(5)};
+		this.availableItems = new Item[]{new Purse(5), new HealingPotion(3), new StrengthPotion(5)};
 		this.banditItems = new Item[]{new Purse(2), new HealingPotion(1), new StrengthPotion(3)};
 		randomGenerator = new Random();
 	}

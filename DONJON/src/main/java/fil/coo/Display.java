@@ -32,7 +32,7 @@ public class Display {
 	}
 
 	/**
-	 * Display a the key-value pairs of a Hashmap of Displayable object
+	 * Display the key-value pairs of a Hashmap of Displayable object
 	 * 
 	 * @param <T1>
 	 * @param <T2>
