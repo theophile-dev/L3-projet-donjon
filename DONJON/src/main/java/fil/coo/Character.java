@@ -35,6 +35,10 @@ public abstract class Character {
 		target.setHp(target.getHp() - this.getStrength());
 	}
 
+	
+	/**
+	 * Display Information about the Character. Like his name, his strength, his Life Point and his gold.
+	 */
 	public void displayStats() {
 		this.display.simpleMessage(" --- ");
 		this.display.simpleMessage(this.getName() + " stats :");

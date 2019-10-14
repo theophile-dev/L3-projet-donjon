@@ -46,10 +46,18 @@ public class DonjonBuilder {
 		
 	}
 	
+	/**
+	 * Return donjonEntrance
+	 * @return donjonEntrance
+	 */
 	public Room getDonjonEntrance(){
 		return donjonEntrance;
 	}
 	
+	/**
+	 * Return donjonExit
+	 * @return donjonExit
+	 */
 	public Room getDonjonExit(){
 		return donjonExit;
 	}
